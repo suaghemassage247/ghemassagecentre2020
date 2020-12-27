@@ -22,7 +22,7 @@ exports.slidehome_get_all = (req, res, next) => {
             };
           })
         };
-        res.render('backend/slidehome/slidehome-all',{response:response,layout:'layouts/layoutadmin'})
+        res.render('backend/slidehome/slidehome-all',{response:response,layout:'layouts/layoutsadmin'})
 
       })
       .catch(err => {
@@ -36,7 +36,7 @@ exports.slidehome_get_all = (req, res, next) => {
   }
 };
 exports.slidehome_add_slidehome=(req,res,next)=>{
-  res.render('backend/slidehome/slidehome-create',{layout:'layouts/layoutadmin'});
+  res.render('backend/slidehome/slidehome-create',{layout:'layouts/layoutsadmin'});
 }
 exports.slidehome_create_slidehome = (req, res, next) => {
   const slidehome = new Slidehome({
@@ -49,7 +49,7 @@ exports.slidehome_create_slidehome = (req, res, next) => {
     .save()
     .then(result => {
       console.log(result);
-      res.redirect('/slidehome')
+      res.redirect('/slide')
     })
     .catch(err => {
       console.log(err);
@@ -65,7 +65,7 @@ exports.slidehome_get_slidehome = (req, res, next) => {
     .exec()
     .then(doc => {
       console.log("From database", doc);
-      res.render('backend/slidehome/slidehome-detail',{ghemassage:doc,layout:'layouts/layoutadmin'});
+      res.render('backend/slidehome/slidehome-detail',{ghemassage:doc,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       console.log(err);
@@ -79,7 +79,7 @@ exports.slidehome_get_slidehome_edit = (req, res, next) => {
     .exec()
     .then(doc => {
       console.log("From database", doc);
-      res.render('backend/slidehome/slidehome-detail-edit',{ghemassage:doc,layout:'layouts/layoutadmin'});
+      res.render('backend/slidehome/slidehome-detail-edit',{ghemassage:doc,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       console.log(err);
@@ -126,7 +126,7 @@ exports.slidehome_update_slidehome_edit = (req, res, next) => {
   })
   .exec()
   .then((err,doc)=>{
-    res.redirect('/slidehome');
+    res.redirect('/slide');
   });
 }
 exports.slidehome_delete = (req, res, next) => {

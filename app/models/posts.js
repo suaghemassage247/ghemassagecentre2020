@@ -10,9 +10,7 @@ const postsSchema = new Schema({
   ogtitle:{type:String,default:"title"},
   ogdescription:{type:String,default:"mo ta "},
   keywords:{ type : String , default :"keywords" },
-  hotposts:{type:Boolean},
-  lastposts:{type:Boolean},
-  service:{type:String},
+  typepost:{type:String},
   image:{type:String},
   index:{type:Number,default:1}
 });

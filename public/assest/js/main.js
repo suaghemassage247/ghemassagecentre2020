@@ -1,25 +1,34 @@
 
- //require('../css/font.css');
-// require ('../css/style.scss');
-
 $(document).ready(function(){
-  $('.delete-ghemassage').on('click',function(e){
+  //khi click vào nút xóa sẽ tự động reload trang
+  $('.delete-nsx').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/ghemassage/'+id,
+      url:'/nsx/'+id,
       success:function(data){
         location.reload();
       }
 
     })
   });
+
+  $('.delete-camera').on('click',function(e){
+    $target =$(e.target);
+    const id = $target.attr('data-id');
+      console.log(id);
+    $.ajax({
+      type:"DELETE",
+      url:'/camera/'+id,
+      success:function(data){
+        location.reload();
+      }
+    })
+  });
   $('.delete-user').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
@@ -28,86 +37,51 @@ $(document).ready(function(){
       success:function(data){
         location.reload();
       }
-
     })
   });
   $('.delete-order').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/orders/'+id,
-      success:function(data){
-        location.reload();
-      }
-
-    })
-  });
-  $('.delete-date').on('click',function(e){
-    $target =$(e.target);
-    console.log($target);
-    const id = $target.attr('data-id');
-      console.log(id);
-    $.ajax({
-      type:"DELETE",
-      url:'/date/'+id,
-      success:function(data){
-        location.reload();
-      }
-
-    })
-  });
-  $('.delete-slidehome').on('click',function(e){
-    $target =$(e.target);
-    console.log($target);
-    const id = $target.attr('data-id');
-      console.log(id);
-    $.ajax({
-      type:"DELETE",
-      url:'/slidehome/'+id,
-      success:function(data){
-        location.reload();
-      }
-
-    })
-  });
-  $('.delete-category').on('click',function(e){
-    $target =$(e.target);
-    console.log($target);
-    const id = $target.attr('data-id');
-      console.log(id);
-    $.ajax({
-      type:"DELETE",
-      url:'/category/'+id,
-      success:function(data){
-        location.reload();
-      }
-
-    })
-  });
-  $('.delete-news').on('click',function(e){
-    $target =$(e.target);
-    console.log($target);
-    const id = $target.attr('data-id');
-      console.log(id);
-    $.ajax({
-      type:"DELETE",
-      url:'/news/'+id,
+      url:'/order/'+id,
       success:function(data){
         location.reload();
       }
     })
   });
-  $('.delete-service').on('click',function(e){
+  $('.delete-danhmuc').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/service/'+id,
+      url:'/danhmuc/'+id,
+      success:function(data){
+        location.reload();
+      }
+    })
+  });
+  $('.delete-laptop').on('click',function(e){
+    $target =$(e.target);
+    const id = $target.attr('data-id');
+      console.log(id);
+    $.ajax({
+      type:"DELETE",
+      url:'/laptop/'+id,
+      success:function(data){
+        location.reload();
+      }
+    })
+  });
+  $('.delete-desktop').on('click',function(e){
+    $target =$(e.target);
+    const id = $target.attr('data-id');
+      console.log(id);
+    $.ajax({
+      type:"DELETE",
+      url:'/desktop/'+id,
       success:function(data){
         location.reload();
       }
@@ -115,66 +89,99 @@ $(document).ready(function(){
   });
   $('.delete-posts').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/posts/'+id,
+      url:'/post/'+id,
       success:function(data){
         location.reload();
       }
     })
   });
-  $('.delete-trademark').on('click',function(e){
+
+  $('.delete-typepost').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/trademark/'+id,
+      url:'/typepost/'+id,
       success:function(data){
         location.reload();
       }
     })
   });
-  $('.delete-nganhhang').on('click',function(e){
+  $('.delete-slidehome').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/nganhhang/'+id,
+      url:'/slide/'+id,
       success:function(data){
         location.reload();
       }
     })
   });
-  $('.delete-bannernews').on('click',function(e){
+  $('.delete-bannerfix').on('click',function(e){
     $target =$(e.target);
-    console.log($target);
     const id = $target.attr('data-id');
       console.log(id);
     $.ajax({
       type:"DELETE",
-      url:'/bannernews/'+id,
+      url:'/bannerfix/'+id,
       success:function(data){
         location.reload();
       }
     })
-  })
+  });
+  $('.delete-nhucau').on('click',function(e){
+    $target =$(e.target);
+    const id = $target.attr('data-id');
+      console.log(id);
+    $.ajax({
+      type:"DELETE",
+      url:'/nhucau/'+id,
+      success:function(data){
+        location.reload();
+      }
+    })
+  });
+  $('.delete-phanloai').on('click',function(e){
+    $target =$(e.target);
+    const id = $target.attr('data-id');
+      console.log(id);
+    $.ajax({
+      type:"DELETE",
+      url:'/phanloai/'+id,
+      success:function(data){
+        location.reload();
+      }
+    })
+  });
 });
 
-
-//
+$(document).ready(function(){
+  $(window).scroll(function() {
+    if($(document).scrollTop() >= 130) {
+    $('.aside-right-postdetail').animate({
+      top:"10px"
+    },0)
+  }
+  else if($(document).scrollTop() < 130){
+    $('.aside-right-postdetail').animate({
+      top:"170px"
+    },0)
+  }
+})
+})
 $(document).ready(function(){
 
   CKEDITOR.config.extraPlugins = 'filebrowser';
   CKEDITOR.config.language = 'en';
   CKEDITOR.config.fillEmptyBlocks = false;
-
+  CKEDITOR.config.entities = false;
   CKEDITOR.replace('shortdescription' , {
     filebrowserBrowseUrl: '/javascripts/ckeditor/plugins/filemanager/browser/default/browser.html?Connector=/browser/browse',
     filebrowserUploadUrl: '/uploader/upload?Type=File',
@@ -187,20 +194,11 @@ $(document).ready(function(){
     filebrowserImageUploadUrl: '/uploader/upload?Type=Image',
     filebrowserFlashUploadUrl: '/uploader/upload?Type=Flash'
   });
+
 })
-//list-item admin
-$(document).ready(function(){
-  $('.list-item>li').on('click',function(){
-    $('.list-item>li').removeClass('active');
-    $(this).addClass('active');
-  })
-})
-//end list-item admin
-//slideshow home
 $(document).ready(function() {
   var sync1 = $("#sync1");
   var sync2 = $("#sync2");
-
   sync1.owlCarousel({
     singleItem : true,
     slideSpeed : 1000,
@@ -210,7 +208,6 @@ $(document).ready(function() {
     responsiveRefreshRate : 200,
 	navigationText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
   });
-
   sync2.owlCarousel({
     items : 3,
     itemsDesktop      : [1199,3],
@@ -235,13 +232,11 @@ $(document).ready(function() {
       center(current)
     }
   }
-
   $("#sync2").on("click", ".owl-item", function(e){
     e.preventDefault();
     var number = $(this).data("owlItem");
     sync1.trigger("owl.goTo",number);
   });
-
   function center(number){
     var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
     var num = number;
@@ -268,571 +263,100 @@ $(document).ready(function() {
     }
   }
 });
-//end slideshow home
-//cutdown
 $(document).ready(function(){
-  var getFinalDate = function (countdown, current) {
-           var finalTime = moment(countdown, 'YYYY/MM/DD HH:mm:ss');
-           var current = moment(current, 'YYYY/MM/DD HH:mm:ss');
-           var tmp = 0;
-           var diff = finalTime.diff(current);
-           if (diff > 0) {
-               tmp = diff;
-           }
-           return moment().add(tmp, 'millisecond').format('YYYY/MM/DD HH:mm:ss');
-       };
-       var updateVal = function (val) {
-           val = parseInt(val, 10) || 0; return (val < 10 && val >= 0) ? ('0' + val) : val;
-       };
-       var $countDown1 = $('#count-down-1');
-			 var utc = new Date();
-       $countDown1.countdown(getFinalDate($countDown1.attr('data-count-down'),utc), function (event) {
-       var offset = $.extend({}, event.offset);
-       $countDown1.find('.days').text(updateVal(offset.totalDays));
-       $countDown1.find('.hours').text(updateVal(offset.hours));
-       $countDown1.find('.minutes').text(updateVal(offset.minutes));
-       $countDown1.find('.seconds').text(updateVal(offset.seconds));
-      });
+  $('.list-item>li').on('click',function(){
+    $('.list-item>li').removeClass('active');
+    $(this).addClass('active');
+  })
+  $('.item-tab').on('click',function(){
+    $('.item-tab').removeClass('active');
+    $(this).addClass('active');
+  })
 })
-//end countDown1
+$(document).ready(function() {
+  var owl = $(".owl-slide-tintuc");
+  owl.owlCarousel({
+      items : 3, //10 items above 1000px browser width
+      itemsDesktop : [1000,3], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,2.5], // betweem 900px and 601px
+      itemsTablet: [600,2.5], //1 items between 600 and 0
+      itemsMobile : [320,1.2] // itemsMobile disabled - inherit from itemsTablet option
+  });
+})
+$(document).ready(function() {
+    var owl = $(".owl-danhmuc-mb");
+    owl.owlCarousel({
+        items : 2, //10 items above 1000px browser width
+        itemsDesktop : [1000,3], //5 items between 1000px and 901px
+        itemsDesktopSmall : [900,2.5], // betweem 900px and 601px
+        itemsTablet: [600,1], //1 items between 600 and 0
+        itemsMobile : [320,1] // itemsMobile disabled - inherit from itemsTablet option
+    });
+    owl.trigger('owl.play',4000);
+});
+$(document).ready(function() {
+    var owl = $(".owl-timkiemhangdau-mb");
+    owl.owlCarousel({
+        items : 1, //10 items above 1000px browser width
+        itemsDesktop : [1000,3], //5 items between 1000px and 901px
+        itemsDesktopSmall : [900,2.5], // betweem 900px and 601px
+        itemsTablet: [600,1.8], //1 items between 600 and 0
+        itemsMobile : [320,1.8] // itemsMobile disabled - inherit from itemsTablet option
+    });
+    owl.trigger('owl.play',4000);
+});
+$(document).ready(function() {
+    var owl = $(".lt-nhucau");
+    owl.owlCarousel({
+        items : 3, //10 items above 1000px browser width
+        itemsDesktop : [1000,5], //5 items between 1000px and 901px
+        itemsDesktopSmall : [900,4], // betweem 900px and 601px
+        itemsTablet: [600,2.5], //1 items between 600 and 0
+        itemsMobile : [320,2.5] // itemsMobile disabled - inherit from itemsTablet option
+    });
+    owl.trigger('owl.play',8000);
+});
+$(document).ready(function() {
+    var owl = $(".lt-hang");
+    owl.owlCarousel({
+        items : 4, //10 items above 1000px browser width
+        itemsDesktop : [1000,5], //5 items between 1000px and 901px
+        itemsDesktopSmall : [900,4.2], // betweem 900px and 601px
+        itemsTablet: [600,3.5], //1 items between 600 and 0
+        itemsMobile : [320,3.5] // itemsMobile disabled - inherit from itemsTablet option
+    });
+    owl.trigger('owl.play',8000);
+});
+function removeAccents(strAccents){
+  strAccents = strAccents.split('');
+  strAccentsOut = new Array();
+  strAccentsLen = strAccents.length;
+  var accents = 'ÀÁÂÃÄÅàáâãäåạÒÓÔÕÕÖØòóôõöộọøếÈÉÊËèéêëễðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+  var accentsOut = ['A','A','A','A','A','A','a','a','a','a','a','a','O','O','O','O','O','O','O','o','o','o','o','o','o','E','E','E','E','e','e','e','e','e','C','c','D','I','I','I','I','i','i','i','i','U','U','U','U','u','u','u','u','N','n','S','s','Y','y','y','Z','z'];
+  for (var y = 0; y < strAccentsLen; y++) {
+      if (accents.indexOf(strAccents[y]) != -1) {
+          strAccentsOut[y] = accentsOut[accents.indexOf(strAccents[y])];
+      }
+      else
+          strAccentsOut[y] = strAccents[y];
+  }
+  strAccentsOut = strAccentsOut.join('');
+   strAccentsOut = strAccentsOut.toLowerCase();
+  return strAccentsOut;
+}
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 $(document).ready(function(){
-  $("#zoom_easing").elevateZoom({easing : true});
+  var commas=document.getElementsByClassName('commas');
+  for(var i=0;i<commas.length;i++){
+    commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
+  }
 })
 $(document).ready(function() {
         $("#lightgallery").lightGallery();
 });
-//slide nganh hang
-$(document).ready(function() {
-  var owl = $("#owl-slide-nganh-hang");
-  owl.owlCarousel({
-      items : 2, //10 items above 1000px browser width
-      itemsDesktop : [1000,2], //5 items between 1000px and 901px
-      itemsDesktopSmall : [900,1], // betweem 900px and 601px
-      itemsTablet: [600,1], //1 items between 600 and 0
-      itemsMobile : [320,1] // itemsMobile disabled - inherit from itemsTablet option
-  });
-    owl.trigger('owl.play',4000);
-});
-//end slide nganh hang
-//flexslider trang tin tuc
-$(document).ready(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
-  });
-});
-//end flexslider trang tin tuc
-//sort bo loc
-$('#sort').click(function(){
-  if($('#sort').val() =="asc"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sort').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#sort').val() =="desc"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sort').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#sort').val() =="sale"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sort').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  };
-})
-$('#sortmcb').click(function(){
-  if($('#sortmcb').val() =="asc"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sortmcb').val()},
-      url:'/san-pham/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#sortmcb').val() =="desc"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sortmcb').val()},
-      url:'/san-pham/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#sortmcb').val() =="sale"){
-    $.ajax({
-      type:"POST",
-      data:{sort:$('#sortmcb').val()},
-      url:'/san-pham/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  };
-})
-$('#ghesortprice').click(function(){
-  if($('#ghesortprice').val() =="duoi5tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#ghesortprice').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#ghesortprice').val() =="duoi10tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#ghesortprice').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#ghesortprice').val() =="tren10tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#ghesortprice').val()},
-      url:'/ghe-massage-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/ghe-massage/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  };
-})
-$('#maychaybosortprice').click(function(){
-  if($('#maychaybosortprice').val() =="duoi5tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#maychaybosortprice').val()},
-      url:'/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#maychaybosortprice').val() =="duoi10tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#maychaybosortprice').val()},
-      url:'/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  }
-  else if($('#maychaybosortprice').val() =="tren10tr"){
-    $.ajax({
-      type:"POST",
-      data:{sortprice:$('#maychaybosortprice').val()},
-      url:'/may-chay-bo-ban-chay-nhat',
-      success:function(data){
-        console.log(data);
-        var listproduct=document.getElementsByClassName('list-product')[0];
-        var content=""
-        for(var i=0; i<data.count;i++){
-            var saleoff=Number(data.product[i].price) - Number(data.product[i].pricesale);
-            content+='<li class="item-product">' +
-            '<div class="img-product"><img src=/'+data.product[i].imagedefault[0].originalname+' alt='+data.product[i].imagedefault[0].originalname+'></div>' +
-            '<div class="detail-product">' +
-            '<div class="name-product">' +
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+data.product[i].name +"</a></div>"+
-            '<div class="sale-off"><span><span class="commas">' + saleoff  +"</span> ₫</span></div>"+
-            '<div class="wrap-price-buy"><div class="wrap-price">'+
-            '<div class="price-sale"><span class="commas">' +data.product[i].pricesale  +"</span> ₫</div>"+
-            '<div class="price"><span class="commas">' +data.product[i].price+"</span> ₫</div>"+
-            '</div>'+
-            '<div class="buy">'+
-            '<a href=/may-chay-bo/'+data.product[i].nameseo +'>'+
-            '<i class="fa fa-cart-plus"></i>'+
-            '</a>'
-            '</div>'
-            '</div>'
-            '</div>'
-            '</li>'
-        }
-        listproduct.innerHTML="";
-        listproduct.innerHTML=content;
-        var commas=document.getElementsByClassName('commas');
-        for(var i=0;i<commas.length;i++){
-          commas[i].innerHTML=numberWithCommas(commas[i].innerHTML);
-        }
-      }
-    });
-  };
-})
-//end sort
-//fix aside tin tuc chi tiet
 $(document).ready(function(){
-  $(window).scroll(function() {
-    if($(document).scrollTop() >= 130) {
-    $('.aside-right-newsdetail').animate({
-      top:"0"
-    },0)
-  }
-  else if($(document).scrollTop() < 130){
-    $('.aside-right-newsdetail').animate({
-      top:"250px"
-    },0)
-  }
-  if($(document).scrollTop()>= (document.body.clientHeight -1000)){
-    $('.aside-right-newsdetail').animate({
-      top:"-160px"
-    },0)
-  }
-})
-})
-//end fix aside
-//fix aside post dich vu
-$(document).ready(function(){
-  $(window).scroll(function() {
-    if($(document).scrollTop() >= 130) {
-    $('.aside-right-postdetail').animate({
-      top:"20px"
-    },0)
-  }
-  else if($(document).scrollTop() < 130){
-    $('.aside-right-postdetail').animate({
-      top:"270px"
-    },0)
-  }
-})
-})
-//end fix aside
+  $("#zoom_easing").elevateZoom({easing : true});
+});

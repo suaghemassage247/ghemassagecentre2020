@@ -20,7 +20,7 @@ exports.users_get_all = (req, res, next) => {
           };
         })
       };
-      res.render('backend/user/user-get-all',{response:response,layout:'layouts/layoutadmin'})
+      res.render('backend/user/user-get-all',{response:response,layout:'layouts/layoutsadmin'})
 
     })
     .catch(err => {
@@ -31,7 +31,7 @@ exports.users_get_all = (req, res, next) => {
     });
 };
 exports.users_add_user=(req,res,next)=>{
-  res.render('backend/user/user-create',{layout:'layouts/layoutadmin'});
+  res.render('backend/user/user-create',{layout:'layouts/layoutsadmin'});
 }
 exports.users_create_user = (req, res, next) => {
   const user = new User({
@@ -59,7 +59,7 @@ exports.users_get_user = (req, res, next) => {
     .exec()
     .then(doc => {
       console.log("From database", doc);
-      res.render('backend/user/userdetail',{user:doc,layout:'layouts/layoutadmin'});
+      res.render('backend/user/userdetail',{user:doc,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       console.log(err);
@@ -73,7 +73,7 @@ exports.users_get_user_edit = (req, res, next) => {
     .exec()
     .then(doc => {
       console.log("From database", doc);
-      res.render('backend/user/userdetail-edit',{user:doc,layout:'layouts/layoutadmin'});
+      res.render('backend/user/userdetail-edit',{user:doc,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       console.log(err);

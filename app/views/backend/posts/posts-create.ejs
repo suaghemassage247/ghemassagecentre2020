@@ -38,20 +38,14 @@
         <label>keywords</label>
         <input type="text" name="keywords" placeholder="Nhập từ khóa" autocomplete="off" class="form-control">
       </div>
+
+
       <div class="form-group">
-        <label>Post tiêu điểm</label>
-        <input type="checkbox" name="hotposts" >
-      </div>
-      <div class="form-group">
-        <label>Post mới nhất</label>
-        <input type="checkbox" name="lastposts" >
-      </div>
-      <div class="form-group">
-        <label>Chọn Dịch vụ</label>
-        <select name="service">
-          <option value="" selected disabled hidden>chọn dịch vụ</option>
-          <%for(var i=0; i<services.count;i++){%>
-          <option value="<%=services.service[i].name%>"><%=services.service[i].name%></option>
+        <label>Chọn loại bài viết</label>
+        <select name="typepost">
+          <option value="" selected disabled hidden>chọn loại bài viết</option>
+          <%for(var i=0; i<typeposts.count;i++){%>
+          <option value="<%=typeposts.typepost[i].name%>"><%=typeposts.typepost[i].name%></option>
           <%}%>
         </select>
       </div>

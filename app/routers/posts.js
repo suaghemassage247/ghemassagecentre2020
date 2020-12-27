@@ -30,16 +30,12 @@ const upload = multer({
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // mongoose.connect('mongodb://localhost/ghemassage',{useMongoClient:true});
 // mongoose.Promise = global.Promise;
-router.get('/posts-all',PostController.posts_get_all);
-router.get('/posts-create',PostController.posts_add_posts)
-router.post('/posts-create',upload.single('image'),urlencodedParser,PostController.posts_create_posts);
-router.get('/hotposts',PostController.posts_get_hotposts);
-router.get('/lastpostsHome',PostController.posts_get_lastpostsHome);
-//tất cả /tenfile phải nằm trên :postsId vì nó ko phân biệt được là id hay là tenfile
-router.get('/:postsId',PostController.posts_get_posts);
-
-router.get('/edit/:postsId',PostController.posts_get_posts_edit);
-router.post('/edit/:postsId',upload.single('image'),urlencodedParser,PostController.posts_update_posts_edit);
-router.delete("/:postsId",  PostController.posts_delete);
+router.get('/posts',PostController.posts_get_all);
+router.get('/posts/posts-create',PostController.posts_add_posts)
+router.post('/posts/posts-create',upload.single('image'),urlencodedParser,PostController.posts_create_posts);
+router.get('/posts/:postsId',PostController.posts_get_posts);
+router.get('/posts/edit/:postsId',PostController.posts_get_posts_edit);
+router.post('/posts/edit/:postsId',upload.single('image'),urlencodedParser,PostController.posts_update_posts_edit);
+router.delete("/posts/:postsId",  PostController.posts_delete);
 
 module.exports = router;

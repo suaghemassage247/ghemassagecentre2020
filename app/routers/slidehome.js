@@ -1,6 +1,5 @@
 const express =  require ('express')
 const router = express.Router();
-// const mongoose = require ('mongoose');
 const SlidehomeController = require('../controllers/admin/slidehome');
 const multer = require ('multer');
 const storage = multer.diskStorage({
@@ -28,15 +27,13 @@ const upload = multer({
 
  var bodyParser = require('body-parser');
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
-// mongoose.connect('mongodb://localhost/ghemassage',{useMongoClient:true});
-// mongoose.Promise = global.Promise;
-router.get('/',SlidehomeController.slidehome_get_all);
-router.get('/slidehome-create',SlidehomeController.slidehome_add_slidehome)
-router.post('/slidehome-create',upload.single('image'),urlencodedParser,SlidehomeController.slidehome_create_slidehome);
 
-router.get('/:slidehomeId',SlidehomeController.slidehome_get_slidehome);
-router.get('/edit/:slidehomeId',SlidehomeController.slidehome_get_slidehome_edit);
-router.post('/edit/:slidehomeId',upload.single('image'),urlencodedParser,SlidehomeController.slidehome_update_slidehome_edit);
-router.delete("/:slidehomeId",  SlidehomeController.slidehome_delete);
+router.get('/slide',SlidehomeController.slidehome_get_all);
+router.get('/slide/slidehome-create',SlidehomeController.slidehome_add_slidehome)
+router.post('/slide/slidehome-create',upload.single('image'),urlencodedParser,SlidehomeController.slidehome_create_slidehome);
+router.get('/slide/:slidehomeId',SlidehomeController.slidehome_get_slidehome);
+router.get('/slide/edit/:slidehomeId',SlidehomeController.slidehome_get_slidehome_edit);
+router.post('/slide/edit/:slidehomeId',upload.single('image'),urlencodedParser,SlidehomeController.slidehome_update_slidehome_edit);
+router.delete("/slide/:slidehomeId",  SlidehomeController.slidehome_delete);
 
 module.exports = router;

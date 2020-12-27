@@ -13,9 +13,7 @@
       <th>og-title</th>
 
       <th>Từ khóa</th>
-      <th>Post tiêu điểm</th>
-      <th>Post nổi bật mới nhất</th>
-      <th>Dịch vụ</th>
+      <th>Loại bài viết</th>
       <th>Hình ảnh</th>
       <th>Thứ tự</th>
       <th>Sửa</th>
@@ -35,10 +33,8 @@
       <td> <%=response.posts[i].ogtitle %> </td>
 
       <td><%=response.posts[i].keywords %>  </td>
-      <td><%=response.posts[i].hotposts %>  </td>
-      <td><%=response.posts[i].lastposts %>  </td>
-      <td><%=response.posts[i].service %>  </td>
-      <td class="image-response"><img src="/<%=response.posts[i].image %>">  </td>
+      <td><%=response.posts[i].typepost %>  </td>
+      <td class="image-response"><img src="/assest/image/<%=response.posts[i].image %>">  </td>
       <td><%=response.posts[i].index %>  </td>
       <td><a href="/posts/edit/<%=response.posts[i]._id %>">Sửa</a></td>
       <td><a class="delete-posts" data-id="<%=response.posts[i]._id %>">Xóa</a></td>

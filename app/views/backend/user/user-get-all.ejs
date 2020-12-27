@@ -2,7 +2,7 @@
 
   <h2>Danh sách sản phẩm</h2>
     <h2>Tổng số sản phẩm <%=response.count%></h2>
-    <a href="user-create">Thêm</a>
+    <a href="/user/user-create">Thêm</a>
   <table class="table table-bordered table-admin">
     <thead>
       <tr>
@@ -22,7 +22,7 @@
 
         <td><a href="/user/edit/<%=response.users[i]._id %>">Sửa</a></td>
         <td><a class="delete-user" data-id="<%=response.users[i]._id %>">Xóa</a></td>
-        <td><a href="user-create">Thêm</a></td>
+        <td><a href="/user/user-create">Thêm</a></td>
         </tr>
       <% } %>
 

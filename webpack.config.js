@@ -7,12 +7,12 @@ module.exports = {
     },
     watch:true,
     module:{
-      loaders:[
+      rules:[
         { test: /\.(css|scss)$/,
           loader: "style-loader!css-loader!sass-loader"
         },
         {
-          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpg|gif)$/,
 		      loader: "file-loader"
         }
       ]

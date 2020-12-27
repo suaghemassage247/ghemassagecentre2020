@@ -1,21 +1,25 @@
 const mongoose = require("mongoose");
 const Order = require("../../models/order");
-const Ghemassage = require("../../models/ghemassage");
+const Laptop = require("../../models/laptop");
 
 exports.orders_get_all = (req, res, next) => {
   Order.find()
-    .select("ghemassage quantity _id")
-    .populate("ghemassage","name" )
+    .select(" _id product totalprice address name phone email note")
     .exec()
     .then(docs => {
-      console.info(docs);
       const response={
         count: docs.length,
         orders: docs.map(doc => {
           return {
             _id: doc._id,
-            ghemassage: doc.ghemassage,
-            quantity: doc.quantity,
+            product:doc.product,
+            totalprice:doc.totalprice,
+            cart:doc.cart,
+            address: doc.address,
+            name: doc.name,
+            phone: doc.phone,
+            email: doc.email,
+            note: doc.note,
             request: {
               type: "GET",
               url: "http://localhost:3000/orders/" + doc._id
@@ -23,7 +27,36 @@ exports.orders_get_all = (req, res, next) => {
           };
         })
       }
-      res.render('backend/home/orders-all',{response:response,layout:'layouts/layoutadmin'})
+      res.render('backend/camera/orders-get-all',{response:response,layout:'layouts/layoutsadmin'})
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    });
+};
+exports.orders_all = (req, res, next) => {
+  Order.find()
+    .select("name _id phone email cart ")
+    .exec()
+    .then(docs => {
+      const response={
+        count: docs.length,
+        orders: docs.map(doc => {
+          return {
+            _id: doc._id,
+            name: doc.name,
+            phone: doc.phone,
+            email: doc.email,
+            cart: doc.cart,
+            request: {
+              type: "GET",
+              url: "http://localhost:3000/orders/" + doc._id
+            }
+          };
+        })
+      }
+      res.render('backend/camera/orders-get-all',{response:response,layout:'layouts/layoutsadmin'})
     })
     .catch(err => {
       res.status(500).json({
@@ -32,24 +65,24 @@ exports.orders_get_all = (req, res, next) => {
     });
 };
 exports.orders_add_order=(req,res,next)=>{
-  Ghemassage.find().exec()
+  Camera.find().exec()
     .then((docs)=>{
       const response = {
         count: docs.length,
-        ghemassages: docs.map(doc => {
+        cameras: docs.map(doc => {
           return {
             _id: doc._id,
             name:doc.name
           };
         })
       };
-      res.render('backend/home/order-create',{response:response,layout:'layouts/layoutadmin'});
+      res.render('backend/camera/order-create',{response:response,layout:'layouts/layoutsadmin'});
     })
 }
 exports.orders_create_order = (req, res, next) => {
-  Ghemassage.findById(req.body.ghemassageId)
-    .then(ghemassage => {
-      if (!ghemassage) {
+  Laptop.findById(req.body.laptopId)
+    .then(laptop => {
+      if (!laptop) {
         return res.status(404).json({
           message: "Ghemassage not found"
         });
@@ -57,7 +90,7 @@ exports.orders_create_order = (req, res, next) => {
       const order = new Order({
         _id: new mongoose.Types.ObjectId(),
         quantity: req.body.quantity,
-        ghemassage: req.body.ghemassageId
+        laptop: req.body.laptopId
       });
       return order.save();
     })
@@ -67,7 +100,7 @@ exports.orders_create_order = (req, res, next) => {
         message: "Order stored",
         createdOrder: {
           _id: result._id,
-          ghemassage: result.ghemassage,
+          laptop: result.laptop,
           quantity: result.quantity
         },
         request: {
@@ -85,8 +118,8 @@ exports.orders_create_order = (req, res, next) => {
 };
 exports.orders_get_order = (req, res, next) => {
   Order.findById(req.params.orderId)
-    .select('quantity ghemassage')
-    .populate("ghemassage")
+    .select('quantity camera')
+    .populate("camera")
     .exec()
     .then(order => {
       if (!order) {
@@ -94,7 +127,7 @@ exports.orders_get_order = (req, res, next) => {
           message: "Order not found"
         });
       }
-      res.render('backend/home/orderdetail',{order:order,layout:'layouts/layoutadmin'});
+      res.render('backend/camera/orderdetail',{order:order,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       res.status(500).json({
@@ -105,12 +138,12 @@ exports.orders_get_order = (req, res, next) => {
 exports.order_get_order_edit = (req, res, next) => {
   const id = req.params.orderId;
   Order.findById(id)
-    .select("_id ghemassage quantity")
-    .populate("ghemassage name")
+    .select("_id camera quantity")
+    .populate("camera name")
     .exec()
     .then(doc => {
       console.log("From database", doc);
-      res.render('backend/home/orderdetail-edit',{order:doc,layout:'layouts/layoutadmin'});
+      res.render('backend/camera/orderdetail-edit',{order:doc,layout:'layouts/layoutsadmin'});
     })
     .catch(err => {
       console.log(err);
@@ -161,7 +194,7 @@ exports.orders_delete_order = (req, res, next) => {
         request: {
           type: "POST",
           url: "http://localhost:3000/orders",
-          body: { ghemassageId: "ID", quantity: "Number" }
+          body: { cameraId: "ID", quantity: "Number" }
         }
       });
     })
